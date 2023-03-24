@@ -1,0 +1,91 @@
+1.
+	I.
+		It provides a class called Student. Each object of this class represents a student and each student has a chosen number of scores and a name. It has methods to provide the average score and high score for the student.
+
+	II. ...
+	III. ...
+
+2.
+	I.
+  		def __init__(self, name, number):
+  		  # creates a student with the given name
+  		  # and number of scores
+  		  self.name = name
+  		  self.number = number
+  		  self.scores = []
+
+  		  # initialize all scores to zero
+  		  for i in range(number):
+  		    self.scores.append(0)
+
+	II.
+		def getAverage(self):
+  		  # returns the average of all the student's scores
+  		  sum = 0 # sum of the scores
+
+  		  # loop through scores to get the sum
+  		  for score in self.scores:
+  		    sum += score
+
+  		  return sum / len(self.scores) # return avg
+
+  	III.
+		The name of the list is scores.
+
+	IV.
+		The data represents the student's scores.
+
+	V.
+		Having a list of scores, rather than a variable for each score, makes it easier to manage the scores and find the average and maximum values of the scores. It would also be hard to create a certain number of variables that the user inputs, because the number of variables is unknown until running the program. I think that it would be very difficult to not use the list because you would have to create an unknown number of variables.
+
+3.
+	I.
+  		def compare(self, other):
+  		  # compare the average of self with the average of other
+  		  # return one of:
+  		  # less than
+  		  # equal
+  		  # greater than
+
+  		  if self.lessThan(other): # less than
+  		      return "less than"
+  		  elif self.equal(other): # equal to
+  		      return "equal to"
+  		  elif self.greaterthan(other): # greater than
+  		      return "greater than"
+  		  else: # something went wrong; could not compare
+  		      return "Error: comparison could not be made"
+
+	II.
+		# compare student0 with student1 and print result
+		print("{0}'s average is {1} {2}'s average.".format(student0.getName(), student0.compare(student1), student1.getName()))
+
+	III.
+		This procedure provides a way to compare the average scores of two students. It will return either less than, equal to, or greater than in the form of a string.
+
+	IV.
+		It takes two student objects, each with a list of scores, as an input. It finds the average of each of these lists by finding the sum of the numbers in the list and then dividing that by the length of the list. Finally, it compares these averages and returns the result of either less than, equal to, or greater than accordingly.
+
+4.
+	I.
+		First Call:
+			# compare student0 with student1 and print result
+			print("{0}'s average is {1} {2}'s average.".format(student0.getName(), student0.compare(student1), student1.getName()))
+
+		Second Call:
+			# compare student1 with student0 and print result
+			print("{0}'s average is {1} {2}'s average.".format(student1.getName(), student1.compare(student0), student0.getName()))
+
+	II.
+		Condition(s) tested by the first call:
+			It tests whether student0 is less than student1; this is true, so it returns "less than".
+
+		Condition(s) tested by the second call:
+			It first tests whether student1 is less than student0; this is false. Next, it tests whether they are equal; this is false. Finally, it tests whether student1 is greater than student0; this is true, so it returns "greater than".
+
+	III.
+		Result of the first call:
+			Jack's average is less than Alice's average.
+
+		Result of the second call:
+			Alice's average is greater than Jack's average.
